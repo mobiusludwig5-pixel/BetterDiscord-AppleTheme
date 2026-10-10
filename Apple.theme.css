@@ -1,24 +1,93 @@
 /**
  * @name PhosPhobi Apple Glass
  * @author PhosPhobi
- * @version 1.0.0
- * @description Transparentes Apple-Dark-Theme mit Glas-Effekten
+ * @version 1.1.0
+ * @description Apple-inspired transparent black glass theme
+ * @website https://github.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme
  * @source https://github.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme
  */
 
+/* Load the central stylesheet */
 @import url("https://raw.githubusercontent.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme/main/core.css");
 
+/* Apple Glass configuration */
 :root {
-    --phos-bg-opacity: 0.30;
-    --phos-panel-opacity: 0.48;
+    /* Background */
+    --background: url("https://raw.githubusercontent.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme/main/background.png");
+
+    /* White and silver Apple palette */
+    --activetext-colour: #ffffff;
+
+    --primary1-colour: #ffffff;
+    --primary2-colour: rgba(255, 255, 255, 0.28);
+    --primary3-colour: rgba(255, 255, 255, 0.12);
+    --primary4-colour: rgba(255, 255, 255, 0.06);
+
+    /* Transparent black glass */
+    --secondary1-colour: rgba(0, 0, 0, 0.20);
+    --secondary2-colour: rgba(30, 30, 32, 0.42);
+    --secondary3-colour: rgba(0, 0, 0, 0.58);
+    --secondary4-colour: rgba(0, 0, 0, 0.24);
+
+    /* Additional Apple Glass settings */
+    --phos-bg-opacity: 0.24;
+    --phos-panel-opacity: 0.36;
     --phos-menu-opacity: 0.82;
     --phos-blur: 18px;
     --phos-blur-strong: 26px;
 
     --phos-white: #ffffff;
     --phos-silver: #c9cdd4;
+    --phos-background-image: var(--background);
+}
 
-    --phos-background-image: url(
-        "https://raw.githubusercontent.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme/background.png"
-    );
+/* Background image */
+#app-mount {
+    background: var(--background) center / cover no-repeat fixed !important;
+}
+
+/* Keep Discord's main background transparent */
+#app-mount .bg__960e4,
+#app-mount .app__160d8 {
+    background-color: var(--secondary4-colour) !important;
+}
+
+/* Glass effect */
+#app-mount .sidebar__5e434,
+#app-mount .chat_f75fb0,
+#app-mount .members_c8ffbb {
+    backdrop-filter: blur(var(--phos-blur));
+    -webkit-backdrop-filter: blur(var(--phos-blur));
+}
+
+/* White text and silver interactive elements */
+#app-mount {
+    --text-normal: #f5f5f7;
+    --text-muted: #b0b0b8;
+    --interactive-normal: #c9c9d0;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+}
+
+/* Subtle borders */
+#app-mount input,
+#app-mount textarea {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth transitions */
+#app-mount button,
+#app-mount [class*="interactive"] {
+    transition: background-color 160ms ease,
+                border-color 160ms ease;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #app-mount *,
+    #app-mount *::before,
+    #app-mount *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
