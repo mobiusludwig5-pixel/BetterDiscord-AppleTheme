@@ -1,0 +1,24 @@
+/**
+ * @name PhosPhobi Apple Glass
+ * @author PhosPhobi
+ * @version 1.0.0
+ * @description Transparentes Apple-Dark-Theme mit Glas-Effekten
+ * @source https://github.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme
+ */
+
+@import url("https://raw.githubusercontent.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme/main/core.css");
+
+:root {
+    --phos-bg-opacity: 0.30;
+    --phos-panel-opacity: 0.48;
+    --phos-menu-opacity: 0.82;
+    --phos-blur: 18px;
+    --phos-blur-strong: 26px;
+
+    --phos-white: #ffffff;
+    --phos-silver: #c9cdd4;
+
+    --phos-background-image: url(
+        "https://raw.githubusercontent.com/mobiusludwig5-pixel/BetterDiscord-AppleTheme/background.png"
+    );
+}

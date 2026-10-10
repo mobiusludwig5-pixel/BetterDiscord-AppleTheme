@@ -1,0 +1,300 @@
+/*
+ * PhosPhobi Apple Glass
+ * Core stylesheet for BetterDiscord
+ * Version: 1.0.0
+ */
+
+/* ========================================
+   1. CONFIGURATION
+   ======================================== */
+
+:root {
+    --phos-bg-opacity: 0.30;
+    --phos-panel-opacity: 0.48;
+    --phos-menu-opacity: 0.82;
+    --phos-blur: 18px;
+    --phos-blur-strong: 26px;
+
+    --phos-white: #ffffff;
+    --phos-silver: #c9cdd4;
+    --phos-muted: #9298a3;
+    --phos-border: rgba(255, 255, 255, 0.12);
+
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --background-secondary-alt: transparent;
+    --background-tertiary: transparent;
+    --background-accent: rgba(255, 255, 255, 0.10);
+    --background-floating: rgba(12, 12, 14, 0.88);
+    --background-nested-floating: rgba(20, 20, 22, 0.80);
+
+    --text-normal: #f2f2f5;
+    --text-muted: #a5a8b0;
+    --text-link: #d7e5ff;
+
+    --interactive-normal: #c4c7cf;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+    --interactive-muted: #696d76;
+
+    --scrollbar-thin-thumb: rgba(255, 255, 255, 0.20);
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: rgba(255, 255, 255, 0.22);
+    --scrollbar-auto-track: transparent;
+}
+
+/* ========================================
+   2. GLOBAL BACKGROUND
+   ======================================== */
+
+html,
+body,
+#app-mount {
+    background: transparent !important;
+}
+
+body {
+    background-color: #050505 !important;
+}
+
+/* Main Discord application */
+
+#app-mount .appMount__51fd7,
+#app-mount .app__160d8 {
+    background: transparent !important;
+}
+
+/* ========================================
+   3. TRANSPARENT DISCORD PANELS
+   ======================================== */
+
+#app-mount [class*="base_"],
+#app-mount [class*="content_"],
+#app-mount [class*="sidebar_"],
+#app-mount [class*="chat_"],
+#app-mount [class*="page_"],
+#app-mount [class*="container_"] {
+    scrollbar-color: rgba(255,255,255,.2) transparent;
+}
+
+/* Server and channel sidebar */
+
+#app-mount [class*="guilds_"],
+#app-mount [class*="sidebar_"],
+#app-mount [class*="sidebarList_"],
+#app-mount [class*="privateChannels_"] {
+    background: rgba(0, 0, 0, var(--phos-bg-opacity)) !important;
+    backdrop-filter: blur(var(--phos-blur));
+    -webkit-backdrop-filter: blur(var(--phos-blur));
+}
+
+/* Chat area */
+
+#app-mount [class*="chatContent_"],
+#app-mount [class*="messagesWrapper_"],
+#app-mount [class*="scroller_"] {
+    background-color: transparent !important;
+}
+
+/* ========================================
+   4. APPLE GLASS PANELS
+   ======================================== */
+
+/* Headers */
+
+#app-mount [class*="title_"],
+#app-mount [class*="header_"] {
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    backdrop-filter: blur(var(--phos-blur));
+    -webkit-backdrop-filter: blur(var(--phos-blur));
+}
+
+/* Message composer */
+
+#app-mount [class*="channelTextArea_"] {
+    background: rgba(12, 12, 14, 0.65) !important;
+    border: 1px solid var(--phos-border);
+    border-radius: 16px;
+    backdrop-filter: blur(var(--phos-blur));
+    -webkit-backdrop-filter: blur(var(--phos-blur));
+}
+
+/* Individual messages */
+
+#app-mount [class*="message_"] {
+    background: transparent !important;
+}
+
+#app-mount [class*="message_"]:hover {
+    background: rgba(255, 255, 255, 0.035) !important;
+}
+
+/* ========================================
+   5. POPUPS, MENUS AND MODALS
+   ======================================== */
+
+#app-mount [class*="menu_"],
+#app-mount [class*="submenu_"],
+#app-mount [class*="popout_"],
+#app-mount [class*="layer_"] [class*="container_"] {
+    background-color: rgba(10, 10, 12, var(--phos-menu-opacity)) !important;
+    border: 1px solid var(--phos-border);
+    border-radius: 14px;
+    backdrop-filter: blur(var(--phos-blur-strong));
+    -webkit-backdrop-filter: blur(var(--phos-blur-strong));
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Modal dialogs */
+
+#app-mount [class*="modal_"] {
+    background-color: rgba(12, 12, 14, 0.92) !important;
+    border: 1px solid var(--phos-border);
+    border-radius: 18px;
+    backdrop-filter: blur(var(--phos-blur-strong));
+}
+
+/* ========================================
+   6. APPLE-STYLE BUTTONS
+   ======================================== */
+
+#app-mount button {
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+#app-mount [class*="lookFilled_"] {
+    border-radius: 9px;
+}
+
+#app-mount [class*="lookFilled_"][class*="colorBrand_"] {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+#app-mount [class*="lookFilled_"][class*="colorBrand_"]:hover {
+    background: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* ========================================
+   7. CHANNELS AND SERVER ICONS
+   ======================================== */
+
+#app-mount [class*="modeSelected_"] [class*="link_"] {
+    background: rgba(255, 255, 255, 0.13) !important;
+    border-radius: 8px;
+}
+
+#app-mount [class*="modeUnread_"] [class*="link_"] {
+    background: rgba(255, 255, 255, 0.045) !important;
+}
+
+#app-mount [class*="wrapper_"][class*="selected_"] [class*="childWrapper_"] {
+    background: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ========================================
+   8. SCROLLBARS
+   ======================================== */
+
+#app-mount ::-webkit-scrollbar {
+    width: 6px;
+}
+
+#app-mount ::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+#app-mount ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px;
+}
+
+#app-mount ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.34) !important;
+}
+
+/* ========================================
+   9. FRIENDS LIST AND HOME
+   ======================================== */
+
+#app-mount [class*="peopleColumn_"],
+#app-mount [class*="nowPlayingColumn_"],
+#app-mount [class*="membersWrap_"],
+#app-mount [class*="member_"] {
+    background: transparent !important;
+}
+
+#app-mount [class*="interactive_"]:hover {
+    background-color: rgba(255, 255, 255, 0.055) !important;
+}
+
+/* ========================================
+   10. VOICE AND VIDEO
+   ======================================== */
+
+#app-mount [class*="wrapper_"][class*="minimum_"],
+#app-mount [class*="callContainer_"],
+#app-mount [class*="root_"] [class*="tile_"] {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+#app-mount [class*="tile_"] {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ========================================
+   11. SETTINGS
+   ======================================== */
+
+#app-mount [class*="standardSidebarView_"],
+#app-mount [class*="sidebarRegion_"],
+#app-mount [class*="contentRegion_"],
+#app-mount [class*="contentColumn_"] {
+    background: transparent !important;
+}
+
+/* ========================================
+   12. TEXT AND SELECTION
+   ======================================== */
+
+#app-mount ::selection {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+/* ========================================
+   13. REDUCE VISUAL CLUTTER
+   ======================================== */
+
+#app-mount [class*="divider_"] {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+#app-mount [class*="separator_"] {
+    background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* ========================================
+   14. PERFORMANCE AND ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #app-mount *,
+    #app-mount *::before,
+    #app-mount *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+body {
+    background-image: var(--phos-background-image) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
